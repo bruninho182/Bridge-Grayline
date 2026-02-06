@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Bridge Grayline -> Ingresso Desconto",
+  "version": "1.4",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "host_permissions": [
+    "https://admin.tourcms.com/*",
+    "https://www.ingressocomdesconto.com.br/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://admin.tourcms.com/admin/bookings/bookings_edit.php?bid=*"],
+      "js": ["content_tourcms.js"]
+    },
+    {
+      "matches": ["https://www.ingressocomdesconto.com.br/adm/paginas/cadastro_vendas.asp*"],
+      "js": ["content_ingresso.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["https://admin.tourcms.com/*"]
+    }
+  ]
+}
