@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bridge Grayline -> Ingresso Desconto",
-  "version": "1.4",
+  "version": "1.0",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
@@ -36,4 +36,5 @@
       "matches": ["https://admin.tourcms.com/*"]
     }
   ]
+
 }
